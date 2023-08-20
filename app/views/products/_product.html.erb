@@ -1,0 +1,23 @@
+<tbody>
+<td><%= product.name %></td>
+<td><%= product.description %></td>
+<td><%= product.diseases %></td>
+<td>  <%= product.company %></td>
+<td>   <%= product.expiry_date %></td>
+<td><%= product.price %></td>
+<td><%= product.usage %></td>
+<td><%= product.quantity %></td>
+<td><%= product.medtype %></td>
+<td><%= product.lotno %></td>
+
+<% if edit %>
+  <td> <%= link_to "Edit ✍️", edit_product_path(product),:class => "btn btn-warning" %> </td>
+<% else %>
+  <td> <%= link_to "Show 👉", product,:class => "btn btn-primary" %></td>
+<% end %>
+</tbody>
+
+<% if edit
+     puts "god it good ---------->"
+   end
+%>

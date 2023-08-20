@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>All Medicines</h1>
+<%= link_to "Add new Medicine ＋", new_product_path, :class => "btn btn-success" %>  <br><br>
+
+<div id="products">
+  <div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Diseases</th>
+        <th scope="col">Company</th>
+        <th scope="col">Expiry date</th>
+        <th scope="col">Price</th>
+        <th scope="col">Usage</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Type</th>
+        <th scope="col">Lot N:</th>
+        <th scope="col">View</th>
+      </tr>
+      </thead>
+      <% @products.each do |product| %>
+        <%= render product ,edit:false%>
+
+      <% end %>
+
+    </table>
+
+
+  </div>
+
+</div>
+
+<%#= link_to "New product", new_product_path %>

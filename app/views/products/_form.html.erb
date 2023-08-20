@@ -1,0 +1,75 @@
+<%= form_with(model: product,:class=>"form-control") do |form|  %>
+  <% if product.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block",:class=>"form-label" %>
+    <%= form.text_field :name ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" ,:class=>"form-label" %>
+    <%= form.text_area :description  ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :expiry_date, style: "display: block" ,:class=>"form-label" %>
+    <%= form.date_field :expiry_date  ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :usage, style: "display: block",:class=>"form-label"  %>
+    <%= form.text_field :usage  ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :diseases, style: "display: block",:class=>"form-label"  %>
+    <%= form.text_field :diseases  ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :company, style: "display: block" ,:class=>"form-label" %>
+    <%= form.text_field :company  ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :price, style: "display: block" ,:class=>"form-label" %>
+    <%= form.text_field :price  ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block",:class=>"form-label"  %>
+    <%= form.number_field :quantity  ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :medtype, style: "display: block" ,:class=>"form-label" %>
+    <%= form.text_field :medtype  ,:class=>"form-control"%>
+  </div>
+
+  <div>
+    <%= form.label :lotno, style: "display: block" ,:class=>"form-label" %>
+    <%= form.number_field :lotno ,:class=>"form-control" %>
+  </div>
+
+<!--  <div>-->
+    <%#= form.label :price, style: "display: block" ,:class=>"form-label" %>
+    <%#= form.text_field :price  ,:class=>"form-control"%>
+<!--  </div>-->
+
+  <div>
+    <br>
+
+    <%= form.submit "Update Medicine info",:class=>'btn btn-success ✍️' %>
+  </div>
+  <br>
+<% end %>
